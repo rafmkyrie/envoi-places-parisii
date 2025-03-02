@@ -186,7 +186,11 @@ def run_app():
                         upload_folder = "uploaded_places"
                         if not os.path.exists(upload_folder):
                             os.makedirs(upload_folder)
-                        
+                        else:
+                            # Vider le dossier s'il existe déjà
+                            for f in os.listdir(upload_folder):
+                                os.remove(os.path.join(upload_folder, f))
+
                         # Sauvegarder les fichiers
                         st.session_state.places_paths = save_uploaded_places(places_files, upload_folder)
                         
