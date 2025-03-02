@@ -337,9 +337,7 @@ def run_app():
             
         # Aperçu HTML
         with st.expander("Aperçu de l'email", expanded=True):
-            st.markdown("<div style='border: 1px solid #ddd; padding: 15px; border-radius: 5px; background-color: white;'>", unsafe_allow_html=True)
             st.markdown(body + correct_emojis_style, unsafe_allow_html=True)
-            st.markdown("</div>", unsafe_allow_html=True)
         st.markdown("</div>", unsafe_allow_html=True)
 
     # ------------------------------
