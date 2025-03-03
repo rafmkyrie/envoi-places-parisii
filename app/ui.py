@@ -96,7 +96,7 @@ def run_app():
     
     with st.sidebar.expander("Identifiants de connexion", expanded=True):
         username = st.text_input("Adresse email", value="", help="Votre adresse email Gmail")
-        password = st.text_input("Mot de passe", type="password", help="Mot de passe d'application Gmail")
+        password = st.text_input("Mot de passe d'application", type="password", help="Mot de passe d'application Gmail")
     
     # Informations utiles dans la sidebar
     with st.sidebar.expander("Aide", expanded=True):
@@ -104,8 +104,8 @@ def run_app():
         **Comment obtenir un mot de passe d'application Gmail:**
         1. Activer l'authentification à deux facteurs
         2. Aller dans votre compte Google > Sécurité
-        3. Dans "Connexion à Google", sélectionnez "Mots de passe d'application"
-        4. Générez un nouveau mot de passe
+        3. Dans "Connexion à Google", sélectionne "Mots de passe d'application"
+        4. Génère un nouveau mot de passe
         """)
 
     # Initialisation des variables de session
@@ -129,7 +129,7 @@ def run_app():
         
         col1, col2 = st.columns([3, 1])
         with col1:
-            st.markdown("Vérifiez la connexion au serveur SMTP avant de continuer.")
+            st.markdown("Vérifis la connexion au serveur SMTP avant de continuer. Cela est nécessaire pour pouvoir envoyer les emails.")
         with col2:
             verify_btn = st.button("Vérifier", help="Tester les paramètres SMTP")
         
@@ -178,7 +178,7 @@ def run_app():
         
         if validate_files:
             if st.session_state.contacts_df is None or not places_files or st.session_state.email_column is None:
-                st.error("❌ Veille à charger tous les fichiers nécessaires et sélectionner la colonne email.")
+                st.error("❌ Veuille à charger tous les fichiers nécessaires et sélectionner la colonne email.")
             else:
                 with st.spinner("Préparation de la distribution..."):
                     try:
@@ -231,7 +231,7 @@ def run_app():
                     mime="text/csv"
                 )
         else:
-            st.info("ℹ️ La distribution n'a pas encore été générée. Veuillez valider les fichiers à l'étape 2.")
+            st.info("ℹ️ La distribution n'a pas encore été générée. Veuilles à valider les fichiers à l'étape 2.")
         st.markdown("</div>", unsafe_allow_html=True)
 
     # ------------------------------
@@ -401,7 +401,7 @@ def run_app():
                 st.session_state.send_statuses = statuses
                 st.success("✅ Tous les emails ont été traités!")
         else:
-            st.warning("⚠️ Veuillez d'abord générer la distribution à l'étape 2.")
+            st.warning("⚠️ Veuille d'abord générer la distribution à l'étape 2.")
         st.markdown("</div>", unsafe_allow_html=True)
 
     # ------------------------------
