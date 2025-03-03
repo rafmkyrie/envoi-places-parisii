@@ -256,7 +256,7 @@ def run_app():
                     <li>Copie le code associé (commençant par div...) qui est en surbrillance sur la barre de droite</li>
                     <li>Colle-le dans la zone de saisie ci-dessous</li>
                 </ol>
-                <p><em>Astuce : Ne t'inquiète pas des balises div, les destinataires verront uniquement la mise en forme finale.</em></p>
+                <p><em>Note : Ne t'inquiète pas des balises div, les destinataires verront uniquement la mise en forme finale.</em></p>
             </div>
             """, unsafe_allow_html=True)
         
@@ -336,12 +336,12 @@ def run_app():
         </style>
         """
 
-        body = st.text_area("Contenu HTML de l'email", value=default_html, height=300)
+        body = correct_emojis_style + '\n' + st.text_area("Contenu HTML de l'email", value=default_html, height=300)
         is_html = True
             
         # Aperçu HTML
         with st.expander("Aperçu de l'email", expanded=True):
-            st.markdown(body + correct_emojis_style, unsafe_allow_html=True)
+            st.markdown(body, unsafe_allow_html=True)
         st.markdown("</div>", unsafe_allow_html=True)
 
     # ------------------------------
